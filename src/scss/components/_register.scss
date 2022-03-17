@@ -1,0 +1,33 @@
+.form-control {
+    width: 400px;
+    border-radius: 40px;
+    border: 1px solid #FE8800;
+    height: 40px;
+    font-size: 18px;
+    padding-left: 10px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+    @media only screen 
+    and (max-device-width : 480px) {
+      width: 200px;
+    }
+    @media only screen and (min-device-width :320px){
+        width: 140px;
+    }
+    &-submit{
+        border-radius: 40px;
+        border: 1px solid #FE8800;
+        width: 160px;
+        height: 40px;
+        background: none;
+    }
+}
+.red{
+    color:red;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+

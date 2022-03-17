@@ -146,3 +146,53 @@
     }
   }
 }
+
+.btn-weight{
+  color: #fff;
+  font-weight: 600;
+  margin-left: 400px;
+  padding: 12px 25px;
+  min-width: 100px;
+  text-align: center;
+  cursor: pointer;
+  height: 52px;
+  font-size: 18px;
+  @media (max-width: 768px) {
+    margin-right: 400px;
+    margin-top: 20px;  
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.adaptiveImg{
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+}
+
+.adaptiveSlider{
+  @media (max-width: 768px) {
+    img{
+      width: 560px;
+    }
+  }
+  @media only screen 
+  and (min-device-width : 320px) 
+  and (max-device-width : 480px) {
+    img{
+      width: 280px;
+    }
+  }
+}
+

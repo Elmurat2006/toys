@@ -37,5 +37,20 @@
     p {
       color: #7b7b7b;
     }
+    
+  }
+}
+
+.search-input {
+  border-radius: 10px;
+  width: 200px;
+  height: 25px;
+  border: 1px solid #FE8800;
+  margin-bottom: 20px;
+}
+
+.button{
+    @media (max-width: 1080px) {
+      
   }
 }

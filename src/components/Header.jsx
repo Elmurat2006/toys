@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import {useState} from 'react'
 import logoSvg from '../assets/img/logo.svg';
 import Button from './Button';
 
 function Header() {
   const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
+
+
+
 
   return (
     <div className="header">
@@ -22,6 +25,9 @@ function Header() {
         </Link>
 
           <h3 style={{right: '0'}}>+996702334451</h3>
+          <Link to="/register">
+          <button className="button button-outline btn-weight">Регистрация</button>
+          </Link>
         <div className="header__cart">
           <Link to="/cart">
             <Button className="button--cart">

@@ -1,17 +1,20 @@
 import React from 'react';
-import Slider from './components/Slider';
 import { Header } from './components';
 import Footer from './components/Footer';
 import { Home, Cart } from './pages';
 import { Route } from 'react-router-dom';
-
+import Register from './components/Register';
 function App() {
+
+
   return (
     <div className="wrapper">
       <Header />
+
       <div className="content">
         <Route path="/" component={Home} exact />
         <Route path="/cart" component={Cart} exact />
+        <Route path="/register" component={Register} exact />
       </div>
       <Footer />
       <hr className="container" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Categories, SortPopup, PizzaBlock, PizzaLoadingBlock } from '../components';
-
+import {useState} from 'react'
 import { setCategory, setSortBy } from '../redux/actions/filters';
 import { fetchPizzas } from '../redux/actions/pizzas';
 import { addPizzaToCart } from '../redux/actions/cart';
@@ -21,6 +21,9 @@ function Home() {
   const cartItems = useSelector(({ cart }) => cart.items);
   const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded);
   const { category, sortBy } = useSelector(({ filters }) => filters);
+  const [value,setValue] = useState('')
+
+
   console.log(category, sortBy)
 
   React.useEffect(() => {
@@ -42,11 +45,17 @@ function Home() {
     });
   };
 
+  const filteredValues = items.filter(item=>{
+    return item.name.toLowerCase().includes(value.toLowerCase())
+  })
+
+
   return (
-    
+
     <div className="container">
         <Slider />
         <Sales />
+        <input type="text" onChange={(event)=> setValue(event.target.value)}  className = "search-input" placeholder='что хотите искать?'/>
       <div className="content__top">
         <Categories
           activeCategory={category}
@@ -60,9 +69,10 @@ function Home() {
         />
       </div>
       <h2 className="content__title">Все игрушки</h2>
+
       <div className="content__items">
         {isLoaded
-          ? items.map((obj) => (
+          ? filteredValues.map((obj) => (
               <PizzaBlock
                 onClickAddPizza={handleAddPizzaToCart}
                 key={obj.id}

@@ -73,7 +73,6 @@ body {
     .content__title {
       margin: 0;
     }
-
     @media (max-width: 768px) {
       margin-top: 0;
       margin-bottom: 0;
@@ -462,5 +461,19 @@ body {
     align-items: center;
     margin: 0auto;
     margin-bottom: 100px;
+  }
+}
+.cartAdaptive{
+  @media only screen 
+  and (min-device-width : 320px) 
+  and (max-device-width : 480px) {
+    img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 280px;
+  
+    }
+      
   }
 }

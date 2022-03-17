@@ -2,11 +2,15 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+
 import cartEmptyImage from '../assets/img/empty-cart.png';
 import { CartItem, Button } from '../components';
 import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../redux/actions/cart';
 
+
 function Cart() {
+
+
   const dispatch = useDispatch();
   const { totalPrice, totalCount, items } = useSelector(({ cart }) => cart);
 
@@ -34,8 +38,10 @@ function Cart() {
     dispatch(minusCartItem(id));
   };
 
+
+
   const onClickOrder = () => {
-    console.log('ВАШ ЗАКАЗ', items);
+   alert('ваш заказ',items)
   };
 
   return (
@@ -160,7 +166,7 @@ function Cart() {
                 </Link>
               </a>
               <Button onClick={onClickOrder} className="pay-btn">
-                <span>Оплатить сейчас</span>
+                <span   >Оплатить сейчас</span>
               </Button>
             </div>
           </div>
@@ -175,7 +181,7 @@ function Cart() {
             <br />
             Для того, чтобы заказать пиццу, перейди на главную страницу.
           </p>
-          <img src={cartEmptyImage} alt="Empty cart" />
+          <img src={cartEmptyImage} alt="Empty cart" className = "cartAdaptive"/>
           <Link to="/" className="button button--black">
             <span>Вернуться назад</span>
           </Link>
